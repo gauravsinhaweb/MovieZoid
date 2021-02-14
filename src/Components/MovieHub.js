@@ -15,7 +15,6 @@ const MovieHub = (props) => {
   const handleClickMovie = () => {
     setSelectedMovie(movie);
     props.history.push(`/Movie/${id}`);
-    console.log(id);
   };
 
   // const urlParams = new URLSearchParams(window.location.search);
