@@ -1,0 +1,123 @@
+._body {
+  height: 100vh;
+  padding-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  color: #ffff00;
+  position: relative;
+  padding-left: 12rem;
+  padding-right: 14rem;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+._body div {
+  margin: 0rem 2rem;
+}
+._overlay {
+  position: fixed;
+  overflow: hidden;
+  filter: brightness(20%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+._container div {
+  margin: 1.5rem 0;
+}
+._posterPath {
+  width: 338px;
+  height: 505px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 20px 4px rgba(0, 0, 0, 0.25);
+}
+._title {
+  font-weight: 300 !important;
+  font-size: 37px;
+  line-height: 45px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+._subhead {
+  font-weight: 700;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0.08em;
+}
+._rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+._voteAvg span {
+  text-transform: uppercase;
+  line-height: 15px;
+  letter-spacing: 0.00459999em;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0 1rem;
+}
+._language {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.0045em;
+  color: #b0bec5;
+  text-transform: uppercase;
+}
+._overview {
+  font-family: "lato";
+  font-size: 20px;
+
+  font-weight: normal;
+  line-height: 1.75rem;
+  color: white;
+  width: 530px;
+  letter-spacing: 0.01em;
+}
+
+@media screen and (max-width: 600px) {
+  ._body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+  }
+  ._posterPath {
+    width: 15rem;
+    height: 22rem;
+  }
+  ._body div {
+    margin: 1rem 0.1rem;
+    width: auto;
+  }
+
+  ._rating {
+    justify-content: space-between;
+  }
+  ._voteAvg span {
+    text-transform: uppercase;
+    letter-spacing: 0.00459999em;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  ._language {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.0045em;
+    color: #b0bec5;
+    text-transform: uppercase;
+  }
+  ._overview {
+    text-align: left;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+  }
+}

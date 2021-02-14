@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Hero from "./Hero/Hero";
+import Summary from "./Components/Summary";
+import React, { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
+  const [selectedMovie, setSelectedMovie] = useState("");
+  // this.unlisten = this.props.history.listen((location, action) => {
+  //   console.log("on route change");
+  // });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="body"></div>
+      <div className="App">
+        <BrowserRouter>
+          <Switch>
+            <Route exact path={`/movie/:id`}>
+              <Summary
+                selectedMovie={selectedMovie}
+                setselectedMovie={setSelectedMovie}
+              />
+            </Route>
+            <Route path="/">
+              <Hero
+                selectedMovie={selectedMovie}
+                setSelectedMovie={setSelectedMovie}
+              />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
 

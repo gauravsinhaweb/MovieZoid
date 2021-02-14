@@ -1,0 +1,200 @@
+import "./App.css";
+import Hero from "./Hero/Hero";
+import Summary from "./Components/Summary";
+import React, { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+function App() {
+  const [selectedMovie, setSelectedMovie] = useState("");
+
+  return (
+    <>
+      <div className="App">
+        <BrowserRouter>
+          <Switch>
+            <Route path="/moviehub" exact>
+              <Hero
+                selectedMovie={selectedMovie}
+                setSelectedMovie={setSelectedMovie}
+              />
+            </Route>
+
+            <Route path={"/movie/:id"} exact>
+              <Summary
+                selectedMovie={selectedMovie}
+                setselectedMovie={setSelectedMovie}
+              />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    </>
+  );
+}
+
+export default App;
+
+
+     <BrowserRouter>
+          <Switch>
+            <Route path="/MovieHub" exact>
+              <Hero
+                selectedMovie={selectedMovie}
+                setSelectedMovie={setSelectedMovie}
+              />
+            </Route>
+
+            <Route path={`/movie/:id`} exact>
+              <Summary
+                selectedMovie={selectedMovie}
+                setselectedMovie={setSelectedMovie}
+              />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+
+
+        import React, { useState, useEffect } from "react";
+import "./Hero.css";
+import MovieHub from "../Components/MovieHub";
+import { GrNext, GrPrevious } from "react-icons/gr";
+
+import { withRouter } from "react-router-dom";
+const next_API =
+  "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=";
+const popularShows_API =
+  "https://api.themoviedb.org/3/movie/popular?api_key=44672c0063a3a75c6c66be8d2d0d43df";
+const search_API =
+  "https://api.themoviedb.org/3/search/movie?&api_key=44672c0063a3a75c6c66be8d2d0d43df&query=";
+
+function Hero(props) {
+  const { selectedMovie, setSelectedMovie } = props;
+  const [shows, setShows] = useState([]);
+  const [changedValue, setChangedValue] = useState("");
+  const [pages, setPages] = useState();
+
+  // props.history.listen((location, action) => {
+  //   const urlParams = new URLSearchParams(window.location.search);
+
+  //   if (urlParams.get("page")) {
+  //     const myParam = urlParams.get("page");
+  //     console.log(myParam);
+  //     getMovieByPage(myParam);
+  //   }
+  // });
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.get("page")) {
+      const myParam = urlParams.get("page");
+      console.log(myParam);
+      getMovieByPage(myParam);
+    }
+  }, []);
+
+  const getMovieByPage = (page) => {
+    fetch(popularShows_API + next_API + page).then((data) => {
+      console.log(data.results);
+      setShows(data.results);
+      setPages(data.page);
+    });
+  };
+
+  console.log(shows);
+
+  const nextPage = pages + 1;
+  const nextHandler = () => {
+    fetch(popularShows_API + next_API + nextPage)
+      .then((res) => res.json())
+      .then((data) => {
+        setShows(data.results);
+        setPages(data.page);
+        props.history.push(`/MovieHub/discover/Popular?page=${nextPage}`);
+      });
+  };
+  const backPage = pages - 1;
+  const backHandler = () => {
+    fetch(popularShows_API + next_API + backPage)
+      .then((res) => res.json())
+      .then((data) => {
+        setShows(data.results);
+        setPages(data.page);
+        props.history.push(`/MovieHub/discover/Popular?page=${backPage}`);
+      });
+  };
+
+  const changeHandler = (e) => {
+    setChangedValue(e.target.value);
+  };
+  // useEffect(() => {
+  //   fetch(popularShows_API + next_API + 1)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setShows(data.results);
+  //       setPages(data.page);
+  //     });
+  // }, []);
+
+  const searchResult = () => {
+    fetch(search_API + changedValue)
+      .then((res) => res.json())
+      .then((data) => {
+        setShows(data.results);
+      });
+    setChangedValue("");
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === "Enter") {
+      searchResult();
+    }
+  };
+  return (
+    <>
+      <div id="head">
+        <div>
+          <span className="head">POPULAR</span> <br />
+          <span className="subhead">MOVIES</span>
+        </div>
+        <div>
+          <input
+            placeholder="Search.."
+            type="search"
+            onKeyDown={(e) => onKeyDown(e)}
+            value={changedValue}
+            onChange={(e) => changeHandler(e)}
+          />
+        </div>
+      </div>
+
+      <div className="container">
+        {shows && shows.length > 0 ? (
+          shows.map((item) => (
+            <MovieHub
+              key={item.id}
+              movie={item}
+              selectedMovie={selectedMovie}
+              setSelectedMovie={setSelectedMovie}
+            />
+          ))
+        ) : (
+          <div> oops! you got me</div>
+        )}
+      </div>
+      <div className="footerButton">
+        <span className="back">
+          <GrPrevious onClick={backHandler} />
+        </span>
+        <span
+          className="next"
+          // onClick={() => props.history.push(`${nextHandler}`)}
+        >
+          <GrNext onClick={nextHandler} />
+        </span>
+      </div>
+    </>
+  );
+}
+
+export default withRouter(Hero);

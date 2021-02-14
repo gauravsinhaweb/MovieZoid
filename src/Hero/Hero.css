@@ -1,0 +1,226 @@
+.body {
+  background: linear-gradient(-45deg, #a74f34, #92264f, #1a7697, #137e65);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#spinnerBody {
+  position: absolute;
+  background-color: #2c3e50;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: white;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1300px;
+}
+#head {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+::placeholder {
+  color: white;
+  opacity: 0.5; /* Firefox */
+  font-weight: 300;
+  font-family: "Lato";
+}
+#head input {
+  outline: none;
+  height: 2rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid #ccccff;
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 2rem;
+}
+#head input:focus {
+  outline: none;
+  border: 1px solid white;
+  transition: border 0.1s;
+}
+
+.head {
+  font-family: "Montserrat", sans-serif;
+  font-size: 23px;
+  line-height: 27px;
+  font-style: normal;
+  font-weight: 300;
+  flex-direction: column;
+  letter-spacing: 0.12em;
+  color: #ccccff;
+}
+
+.subhead {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  line-height: 13px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1104em;
+  color: #ccccff;
+}
+.footerButton {
+  display: flex;
+  justify-content: space-around;
+}
+.next {
+  font-size: 30px;
+  padding: 2rem;
+  color: white;
+}
+.back {
+  font-size: 30px;
+  padding: 2rem;
+  color: white;
+}
+.next:hover {
+  font-size: 35px;
+  transition: font-size 0.15s;
+}
+.back:hover {
+  font-size: 35px;
+  transition: font-size 0.15s;
+}
+
+@media screen and (max-width: 600px) {
+  .head {
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    line-height: 29px;
+    letter-spacing: 0.14em;
+    margin-left: 0.5rem;
+  }
+  .subhead {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    margin-left: 0.5rem;
+  }
+  #head input {
+    outline: none;
+    height: 1.75rem;
+    border-radius: 1rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 10rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+  }
+}
