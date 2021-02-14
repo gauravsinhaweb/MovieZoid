@@ -121,8 +121,8 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1300px;
+  justify-content: center;
+  max-width: 1400px;
 }
 #head {
   display: flex;
