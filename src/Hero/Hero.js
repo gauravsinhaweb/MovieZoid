@@ -26,12 +26,13 @@ function Hero(props) {
   // main API call..
 
   useEffect(() => {
-    const getMovieByPage = async (API, props) => {
+    const getMovieByPage = async (API) => {
       await fetch(API)
         .then((res) => res.json())
         .then((data) => {
           setShows(data.results);
           setPages(data.page);
+          props.history.push(`/discover/Popular?page=${myParam}`);
         });
       setLoading(true);
     };
