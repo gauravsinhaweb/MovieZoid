@@ -136,23 +136,40 @@
   font-family: "Lato";
 }
 #head input {
+  position: relative;
   outline: none;
   height: 2rem;
   padding-left: 15px;
-  padding-right: 15px;
-  background-color: rgba(0, 0, 0, 0);
+  padding-right: 30px;
+  background-color: white;
   color: white;
-  border: 1px solid #ccccff;
-  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
   font-weight: normal;
-  border-radius: 2rem;
+  width: 3rem;
+  font-weight: bold;
+  font-family: "Lato";
 }
 #head input:focus {
-  outline: none;
-  border: 1px solid white;
+  background-color: transparent;
+  border: none;
   transition: border 0.1s;
+  color: white;
+  border-radius: none;
+  width: 20rem;
+  letter-spacing: 0.2em;
+  text-transform: capitalize;
+  transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.25s;
+  align-items: center;
 }
-
+._searchIcon {
+  position: relative;
+  right: 25px;
+  bottom: 5px;
+  font-size: 20px;
+  color: black;
+}
 .head {
   font-family: "Montserrat", sans-serif;
   font-size: 23px;
@@ -214,13 +231,10 @@
     margin-left: 0.5rem;
   }
   #head input {
-    outline: none;
-    height: 1.75rem;
-    border-radius: 1rem;
-    padding-left: 5px;
-    padding-right: 5px;
+    width: 2rem;
+  }
+  #head input:focus {
     width: 10rem;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
+    font-size: 15px;
   }
 }

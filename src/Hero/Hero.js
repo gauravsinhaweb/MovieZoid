@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { withRouter } from "react-router-dom";
 import MovieHub from "../Components/MovieHub";
+import { BsSearch } from "react-icons/bs";
 import "./Hero.css";
 
 // const next_API =
@@ -99,6 +100,7 @@ function Hero(props) {
                   value={changedValue}
                   onChange={(e) => changeHandler(e)}
                 />
+                <BsSearch className="_searchIcon" />
               </div>
             </div>
             <div className="container">
