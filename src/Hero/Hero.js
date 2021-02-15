@@ -90,7 +90,14 @@ function Hero(props) {
             <div id="head">
               <div>
                 <span className="head">POPULAR</span> <br />
-                <span className="subhead"> MovieZoid</span>
+                <span className="subhead">
+                  {" "}
+                  <img
+                    src="https://www.flaticon.com/svg/vstatic/svg/1038/1038100.svg?token=exp=1613372909~hmac=973156cadd9c2efabee6dcc599b210b6"
+                    className="_logo"
+                  />
+                  MovieZoid
+                </span>
               </div>
               <div>
                 <input
