@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import MovieHub from "../Components/MovieHub";
 import { BsSearch } from "react-icons/bs";
 import "./Hero.css";
+import logo from "../logo.png";
 
 // const next_API =
 //   "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=";
@@ -92,10 +93,7 @@ function Hero(props) {
                 <span className="head">POPULAR</span> <br />
                 <span className="subhead">
                   {" "}
-                  <img
-                    src="https://www.flaticon.com/svg/vstatic/svg/1038/1038100.svg?token=exp=1613372909~hmac=973156cadd9c2efabee6dcc599b210b6"
-                    className="_logo"
-                  />
+                  <img src={logo} className="_logo" />
                   MovieZoid
                 </span>
               </div>
