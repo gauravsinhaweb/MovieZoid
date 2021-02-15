@@ -180,14 +180,16 @@
   letter-spacing: 0.12em;
   color: #ccccff;
 }
-
+._logo {
+  height: 20px !important;
+  margin-right: 0.25rem;
+}
 .subhead {
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
-  line-height: 13px;
   font-style: normal;
   font-weight: 700;
-  letter-spacing: 0.1104em;
+  letter-spacing: 0.2em;
   color: #ccccff;
 }
 .footerButton {
@@ -236,5 +238,8 @@
   #head input:focus {
     width: 10rem;
     font-size: 15px;
+  }
+  .container {
+    min-width: 300px;
   }
 }

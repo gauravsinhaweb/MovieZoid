@@ -90,7 +90,7 @@ function Hero(props) {
             <div id="head">
               <div>
                 <span className="head">POPULAR</span> <br />
-                <span className="subhead">MOVIES</span>
+                <span className="subhead"> MovieZoid</span>
               </div>
               <div>
                 <input

@@ -38,8 +38,8 @@
     height: 15.5rem !important;
     justify-content: space-around !important;
     align-items: center;
-    margin: 0rem !important;
-    width: 9rem !important;
+    margin: 0.75rem !important;
+    width: 10rem !important;
     top: 0rem;
   }
   .shows img:hover {
