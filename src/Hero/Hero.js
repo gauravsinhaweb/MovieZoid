@@ -124,6 +124,7 @@ function Hero(props) {
                 <div>Oops you got me! </div>
               )}
             </div>
+
             {shows.length > 0 && (
               <div className="footerButton">
                 {pages > 1 && (
@@ -140,6 +141,7 @@ function Hero(props) {
                 </span>
               </div>
             )}
+            <div className="copyright">Developed by Gaurav Sinha • 2021</div>
           </body>
         ) : (
           <div id="spinnerBody">

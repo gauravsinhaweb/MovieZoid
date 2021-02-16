@@ -3,6 +3,18 @@
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
+.copyright {
+  position: sticky;
+  text-align: center;
+  color: black;
+  font-family: "lato";
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 166%;
+}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
