@@ -3,6 +3,7 @@ import Hero from "./Hero/Hero";
 import Summary from "./Components/Summary";
 import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState("");
@@ -17,12 +18,17 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path={`/movie/:id`}>
+              <ScrollToTop />
+
               <Summary
                 selectedMovie={selectedMovie}
                 setselectedMovie={setSelectedMovie}
               />
             </Route>
+
             <Route path="/">
+              <ScrollToTop />
+
               <Hero
                 selectedMovie={selectedMovie}
                 setSelectedMovie={setSelectedMovie}
