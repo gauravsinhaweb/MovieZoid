@@ -5,6 +5,7 @@ import MovieHub from "../Components/MovieHub";
 import { BsSearch } from "react-icons/bs";
 import "./Hero.css";
 import logo from "../logo.png";
+import premium from "../premium .png";
 
 // const next_API =
 //   "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=";
@@ -93,9 +94,8 @@ function Hero(props) {
                 <div>
                   <span className="head">POPULAR</span> <br />
                   <span className="subhead">
-                    {" "}
-                    <img src={logo} className="_logo" />
                     MovieZoid
+                    <img src={premium} className="premium" />
                   </span>
                 </div>
               </Link>

@@ -181,9 +181,11 @@
   letter-spacing: 0.12em;
   color: #ccccff;
 }
-._logo {
+
+.premium {
   height: 20px !important;
-  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  margin-bottom: 0.5em;
 }
 .subhead {
   font-family: "Montserrat", sans-serif;
