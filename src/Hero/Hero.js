@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { GrNext, GrPrevious } from "react-icons/gr";
-import { withRouter } from "react-router-dom";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { Link, withRouter } from "react-router-dom";
 import MovieHub from "../Components/MovieHub";
 import { BsSearch } from "react-icons/bs";
 import "./Hero.css";
@@ -89,14 +89,16 @@ function Hero(props) {
         {loading ? (
           <body className="body">
             <div id="head">
-              <div>
-                <span className="head">POPULAR</span> <br />
-                <span className="subhead">
-                  {" "}
-                  <img src={logo} className="_logo" />
-                  MovieZoid
-                </span>
-              </div>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <div>
+                  <span className="head">POPULAR</span> <br />
+                  <span className="subhead">
+                    {" "}
+                    <img src={logo} className="_logo" />
+                    MovieZoid
+                  </span>
+                </div>
+              </Link>
               <div>
                 <input
                   placeholder="Search.."
@@ -129,7 +131,7 @@ function Hero(props) {
               <div className="footerButton">
                 {pages > 1 && (
                   <span className="back">
-                    <GrPrevious onClick={backHandler} />
+                    <FaChevronLeft onClick={backHandler} />
                   </span>
                 )}
 
@@ -137,7 +139,7 @@ function Hero(props) {
                   className="next"
                   // onClick={() => props.history.push(`${nextHandler}`)}
                 >
-                  <GrNext onClick={nextHandler} />
+                  <FaChevronRight onClick={nextHandler} />
                 </span>
               </div>
             )}

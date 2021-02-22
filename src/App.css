@@ -1,41 +1,5 @@
 .App {
   user-select: none;
-  background: linear-gradient(-45deg, #414a4c, #3b444b, #353839, white);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background-color: #181f31;
+  height: 100vh;
 }
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-/* @media screen and (max-width: 600px) {
-  .App {
-    overflow-x: hidden;
-    height: auto;
-  }
-} */

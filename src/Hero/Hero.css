@@ -1,12 +1,10 @@
 .body {
-  background: linear-gradient(-45deg, #a74f34, #92264f, #1a7697, #137e65);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background-color: #0f171e;
 }
 .copyright {
   position: sticky;
   text-align: center;
-  color: black;
+  color: #ccccff41;
   font-family: "lato";
   text-transform: capitalize;
   letter-spacing: 0.1em;
@@ -15,17 +13,7 @@
   font-size: 12px;
   line-height: 166%;
 }
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -141,6 +129,7 @@
   justify-content: space-between;
   padding: 1.5rem;
 }
+
 ::placeholder {
   color: white;
   opacity: 0.5; /* Firefox */
@@ -211,12 +200,12 @@
 .next {
   font-size: 30px;
   padding: 2rem;
-  color: white;
+  color: #ccccff41;
 }
 .back {
   font-size: 30px;
   padding: 2rem;
-  color: white;
+  color: #ccccff41;
 }
 .next:hover {
   font-size: 35px;
