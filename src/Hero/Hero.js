@@ -4,7 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 import MovieHub from "../Components/MovieHub";
 import { BsSearch } from "react-icons/bs";
 import "./Hero.css";
-import logo from "../logo.png";
 import premium from "../premium .png";
 
 // const next_API =

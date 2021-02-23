@@ -203,21 +203,28 @@
   font-size: 30px;
   padding: 2rem;
   color: #ccccff41;
+  cursor: pointer;
 }
 .back {
   font-size: 30px;
   padding: 2rem;
   color: #ccccff41;
+  cursor: pointer;
 }
 .next:hover {
-  font-size: 35px;
-  transition: font-size 0.15s;
+  transition: all 0.15s;
+  color: #ccccffab;
 }
 .back:hover {
-  font-size: 35px;
-  transition: font-size 0.15s;
+  transition: all 0.15s;
+  color: #ccccffab;
 }
-
+.next:active {
+  color: #ccccff;
+}
+.back:active {
+  color: #ccccff;
+}
 @media screen and (max-width: 600px) {
   .head {
     font-family: "Montserrat", sans-serif;
