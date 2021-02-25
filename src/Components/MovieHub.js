@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MovieHub.css";
 import { withRouter } from "react-router-dom";
 import DefaultImg from "./DefaultImg.svg";
 
 const MovieHub = (props) => {
   const { movie, setSelectedMovie } = props;
+  const [result, setResult] = useState("");
+
   let movieId = movie.id;
+  const tagline_API = `https://api.themoviedb.org/3/movie/${movieId}?api_key=44672c0063a3a75c6c66be8d2d0d43df&append_to_response=videos`;
 
   const urlParams = new URLSearchParams(window.location.pathname);
   Boolean(urlParams.get("id"));
@@ -13,10 +16,16 @@ const MovieHub = (props) => {
 
   const PosterPath = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
   const handleClickMovie = () => {
-    setSelectedMovie(movie);
+    setSelectedMovie(result);
     props.history.push(`/Movie/${id}`);
   };
-
+  useEffect(() => {
+    fetch(tagline_API)
+      .then((res) => res.json())
+      .then((data) => {
+        setResult(data);
+      });
+  }, []);
   // const urlParams = new URLSearchParams(window.location.search);
   // const myParam = urlParams.get("page");
   // console.log(myParam);

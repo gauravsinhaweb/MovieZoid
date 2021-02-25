@@ -45,6 +45,7 @@
   font-size: 15px;
   line-height: 19px;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 ._rating {
   display: flex;

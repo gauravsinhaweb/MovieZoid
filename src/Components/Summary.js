@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Summary.css";
 import StarRatings from "../../node_modules/react-star-ratings";
 import DefaultImg from "./DefaultImg.svg";
@@ -37,7 +37,7 @@ function Summary(props) {
             <div className="_container">
               {" "}
               <div className="_title">{selectedMovie.title}</div>
-              <div className="_subhead">A NEW ERA OF WONDER BEGINS.</div>
+              <div className="_subhead">{selectedMovie.tagline}</div>
               <div>
                 <div className="_rating">
                   <span className="_voteAvg ">

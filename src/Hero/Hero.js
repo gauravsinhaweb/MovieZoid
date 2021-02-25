@@ -12,7 +12,10 @@ const popularShows_API =
   "https://api.themoviedb.org/3/movie/popular?api_key=44672c0063a3a75c6c66be8d2d0d43df&page=";
 const search_API =
   "https://api.themoviedb.org/3/search/movie?&api_key=44672c0063a3a75c6c66be8d2d0d43df&query=";
+// const credit_API = `https://api.themoviedb.org/3/movie/${movie_ID}/credits?api_key=b7be0351bf3b452a41f66ab64454e67c&l`;
 
+// const Video_API =
+//   "https://www.themoviedb.org/video/play?key=51nZS-a7mMY&width=500&height=500&_=1614156006128";
 function Hero(props) {
   const { selectedMovie, setSelectedMovie } = props;
   const [shows, setShows] = useState([]);
