@@ -16,10 +16,10 @@ function App() {
       <div className="body"></div>
       <div className="App">
         <BrowserRouter>
+          <ScrollToTop />
+
           <Switch>
             <Route exact path={`/movie/:id`}>
-              <ScrollToTop />
-
               <Summary
                 selectedMovie={selectedMovie}
                 setselectedMovie={setSelectedMovie}
@@ -27,8 +27,6 @@ function App() {
             </Route>
 
             <Route path="/">
-              <ScrollToTop />
-
               <Hero
                 selectedMovie={selectedMovie}
                 setSelectedMovie={setSelectedMovie}

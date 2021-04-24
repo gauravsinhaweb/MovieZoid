@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./MovieHub.css";
 import { withRouter } from "react-router-dom";
 import DefaultImg from "./DefaultImg.svg";
+import ScrollToTop from "../ScrollToTop";
 
 const MovieHub = (props) => {
   const { movie, setSelectedMovie } = props;
@@ -32,6 +33,8 @@ const MovieHub = (props) => {
 
   return (
     <>
+      <ScrollToTop />
+
       {movie ? (
         <div>
           <div className="shows">

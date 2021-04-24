@@ -4,6 +4,7 @@ import StarRatings from "../../node_modules/react-star-ratings";
 import DefaultImg from "./DefaultImg.svg";
 import { withRouter } from "react-router-dom";
 import Neon from "./Neon.svg";
+import ScrollToTop from "../ScrollToTop";
 function Summary(props) {
   const { selectedMovie } = props;
   const PosterPath = "https://image.tmdb.org/t/p/w500/";
@@ -13,6 +14,8 @@ function Summary(props) {
 
   return (
     <>
+      <ScrollToTop />
+
       {selectedMovie ? (
         <div>
           <img
