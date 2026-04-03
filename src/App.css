@@ -1,5 +1,27 @@
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 .App {
   user-select: none;
   background-color: #181f31;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
